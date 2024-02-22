@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Logo from "./Logo";
+import Logo from "../Logo/Logo";
 import styles from "./Sidebar.module.css";
-import AppNav from "./AppNav";
+import AppNav from "../AppNav/AppNav";
 
 function Sidebar() {
   return (

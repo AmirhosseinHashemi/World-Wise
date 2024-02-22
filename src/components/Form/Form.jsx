@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import styles from "./Form.module.css";
-import Button from "./Button";
+import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {

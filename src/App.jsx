@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import Homepage from "./pages/Homepage";
-import Pricing from "./pages/Pricing";
-import Product from "./pages/Product";
-import Login from "./pages/Login";
-import PageNotFound from "./pages/PageNotFound";
-import AppLayout from "./pages/AppLayout";
-import CityList from "./components/CityList";
-import CountryList from "./components/CountryList";
-import City from "./components/City";
-import Form from "./components/Form";
+import Homepage from "./pages/Homepage/Homepage";
+import Pricing from "./pages/Pricing&Product/Pricing";
+import Product from "./pages/Pricing&Product/Product";
+import Login from "./pages/Login/Login";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import AppLayout from "./pages/AppLayout/AppLayout";
+import CityList from "./components/CityList/CityList";
+import CountryList from "./components/CountryList/CountryList";
+import City from "./components/City/City";
+import Form from "./components/Form/Form";
 
 const BASE_URL = "http://localhost:9000/";
 

@@ -1,6 +1,6 @@
-import CityItem from "./CityItem";
-import Spinner from "./Spinner";
-import Message from "./Message";
+import CityItem from "../CityItem/CityItem";
+import Spinner from "../Spinner/Spinner";
+import Message from "../Message/Message";
 import styles from "./CityList.module.css";
 
 function CityList({ cities, isLoading }) {
