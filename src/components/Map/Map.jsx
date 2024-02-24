@@ -3,11 +3,19 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useCities } from "../../contexts/CitiesContext";
 import styles from "./Map.module.css";
+import Button from "../Button/Button";
+import { useGeolocation } from "../../contexts/useGeolocation";
 
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([51.505, -0.09]);
   const [searchQuery] = useSearchParams();
+  const {
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
+    getPosition,
+  } = useGeolocation();
+
   const mapLat = searchQuery.get("lat");
   const mapLng = searchQuery.get("lng");
 
@@ -18,10 +26,24 @@ function Map() {
     [mapLat, mapLng]
   );
 
+  useEffect(
+    function () {
+      if (geoLocationPosition)
+        setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+    },
+    [geoLocationPosition]
+  );
+
   // const navigate = useNavigate();
 
   return (
     <div className={styles.mapContainer}>
+      {!geoLocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "loading ..." : "use your position"}
+        </Button>
+      )}
+
       <MapContainer
         className={styles.map}
         center={mapPosition}
