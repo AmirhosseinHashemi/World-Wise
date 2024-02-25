@@ -14,7 +14,6 @@ function CityItem({ city }) {
   const { currentCity, deleteCity } = useCities();
 
   function handleDelete(e) {
-    console.log(e);
     e.preventDefault();
     deleteCity(id);
   }
