@@ -11,7 +11,7 @@ import {
 import { useCities } from "../../contexts/CitiesContext";
 import styles from "./Map.module.css";
 import Button from "../Button/Button";
-import { useGeolocation } from "../../contexts/useGeolocation";
+import { useGeolocation } from "../../hooks/useGeolocation";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
 
 function Map() {
